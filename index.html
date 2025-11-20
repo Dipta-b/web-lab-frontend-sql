@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+<!-- <img src="https://i.ibb.co.com/qFBPpQhm/1677582984708.jpg" alt="1677582984708" border="0"> -->
+
+<body>
+    <div class="login-form">
+        <h3>please Login...</h3>
+        <form>
+            <input type="text" name="user-id" placeholder="user Id" id="user-id">
+            <input type="password" name="password" placeholder="user password" id="user-password">
+        </form>
+        <button onclick="handleLogin()" class="login-btn"> Login</button>
+    </div>
+
+    <!-- eRR -->
+    <div id="user-login-error" class="error hidden">
+        <h3>User id not found or password is wrong! Please try again</h3>
+    </div>
+
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
