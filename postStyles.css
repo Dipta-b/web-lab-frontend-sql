@@ -7,8 +7,18 @@
     width: 90%;
     background-color: rgb(231, 221, 222);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
+.post{
+    width: 60%;
+    padding: 15px;
+    border: 2px solid red;
+    border-radius: 10px;
+    margin: 20px;
+}
 .post-header {
     display: flex;
     align-items: center;
@@ -42,5 +52,50 @@
 .post-image img {
     width: 50%;
     border-radius: 8px;
+margin: 15px;
+}
 
+.comment{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 10px;
+}
+.comment-user-image img{
+    width: 50%;
+}
+
+.comment-text-container{
+    background-color:bisque;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.comment-text-container h4,p{
+    margin: 0;
+}
+.comment-text-container h4{
+    margin-bottom: 5px;
+}
+.post-comment-input-field-holder{
+    width: 60%;
+}
+/* postComment-input-field{
+    width: 80%;
+} */
+.postComment-holder{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+
+}
+.postComment-input-field{
+    padding: 10px;
+    outline: none;
+    border: 1px solid grey;
+    width: 80%;
+}
+.postComment-btn{
+    padding: 10px;
+    border-color: rgb(220, 85, 85);
 }
