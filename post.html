@@ -11,9 +11,12 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <h3>POst</h3>
+<body onload="showLoggedUser()" ; onload="checkedLoggedInUser()">
 
+    <div class="header">
+            <h3>Hello <span id="logged-userName">Username</span></h3>
+<button onclick="logOut()" class="logout-btn">Log Out</button>
+    </div>
     <section id="post-container">
         <!-- post -->
         <div class="post">
