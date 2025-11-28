@@ -11,6 +11,63 @@
     width: 90%;
     margin: 0 auto;
 }
+
+#add-post-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#add-post-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#add-post-container textarea,
+#add-post-container input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#add-post-container textarea:focus,
+#add-post-container input[type="text"]:focus {
+    border-color: #4A90E2;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+    outline: none;
+}
+
+
+.addPost-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.addPost-btn:hover {
+    background-color: #3b78c3;
+    transform: translateY(-1px);
+}
+
+.addPost-btn:active {
+    transform: translateY(0px);
+}
 .logout-btn{
     background-color: #ff4d4f;   
     color: white;

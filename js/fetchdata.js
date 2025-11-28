@@ -1,4 +1,4 @@
-
+// import calculateTimeDifferance from "../js/utils/calculateTimeDifferance"
 const showLoggedUser = ()=>{
     const userElement = document.getElementById('logged-userName');
     let user = localStorage.getItem('loggedInUser');
@@ -21,6 +21,46 @@ const logOut=()=>{
     checkedLoggedInUser();
 }
 
+
+const addNewPost= async()=>{
+//posted user id from l.storage
+let user = localStorage.getItem('loggedInUser');
+    if(user) user = JSON.parse(user);
+    const postedUserId = user.userId;
+//time post
+    let now = new Date();
+    now.setMinutes(now.getMinutes()-now.getTimezoneOffset());
+    let timeOfPost= now.toISOString();
+//post text
+const postedtextElement= document.getElementById("newPost-text");
+const postText = postedtextElement.value;
+// image
+const postedImageElement = document.getElementById("newPost-image");
+const postImageUrl = postedImageElement.value;
+//creating post obj
+const postObject = {
+    postedUserId:postedUserId,
+    postTime:timeOfPost,
+    postText:postText,
+    postImageUrl:postImageUrl
+};
+
+//sending data to the server
+ try {
+        const res = await fetch("http://localhost:5000/addNewPost",{
+            method:'POST',
+            headers:{
+                'content-type':'application/json',
+            },
+            body:JSON.stringify(postObject)
+        })
+        const data = await res.json();
+    } catch (error) {
+        console.log(error.message)
+    }finally{
+        location.reload()
+    }
+}
 
 const getAllPosts=async()=>{
     let data ;
@@ -55,7 +95,8 @@ const showAllPosts = (allPosts) => {
                     <div class="post-username-time">
                         <p class="post-username">${post.postedUserName}</p>
                         <div class="posted-time">
-                            <span>${post.postTime}</span>
+                            <span>${timeDiff(`${post.postTime}`)}</span>
+                            <span> ago</span>
                         </div>
                     </div>
                 </div>

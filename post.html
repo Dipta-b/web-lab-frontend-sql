@@ -17,6 +17,18 @@
             <h3>Hello <span id="logged-userName">Username</span></h3>
 <button onclick="logOut()" class="logout-btn">Log Out</button>
     </div>
+    <section id="add-post-container">
+<h2>Add New Post</h2>
+<div>
+    <textarea placeholder="Add post text" name="" cols="40" rows="5" id="newPost-text"></textarea>
+</div>
+<div>
+    <input type="text" id="newPost-image" placeholder="Add post image URL">
+</div>
+<div>
+    <button onclick="addNewPost()" class="addPost-btn">Post</button>
+</div>
+    </section>
     <section id="post-container">
         <!-- post -->
         <div class="post">
@@ -205,7 +217,7 @@
  </div>
         </div>
     </section>
-
+<script src="./js/utils/calculateTimeDifferance.js"></script>
 <script src="./js/fetchdata.js"></script>
 </body>
 
