@@ -76,6 +76,21 @@ showAllPosts(data)
    
 }
 
+function goToUpdatePage(postId) {
+    window.location.href = `update.html?postId=${postId}`;
+}
+
+async function handleDeletePost(id) {
+    if (!confirm("Are you sure you want to delete this post?")) return;
+
+    await fetch(`http://localhost:5000/deletePost/${id}`, {
+        method: "DELETE"
+    });
+
+    alert("Post deleted!");
+    location.reload();
+}
+
 const showAllPosts = (allPosts) => {
     console.log(allPosts)
     const postContainer = document.getElementById("post-container");
@@ -108,6 +123,10 @@ const showAllPosts = (allPosts) => {
 
             <div class="post-image">
                 <img src="${post.postImageUrl}" alt="post-image">
+            </div>
+            <div class="post-btn-holder">
+            <button class="update-btn" onclick="goToUpdatePage(${post.postId})">Update</button>
+            <button class="delete-btn" onclick="handleDeletePost(${post.postId})">Delete</button>
             </div>
         `;
 

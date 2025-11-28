@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Post</title>
+</head>
+<body>
+
+<h2>Update Post</h2>
+
+<textarea id="update-text" cols="40" rows="5"></textarea><br><br>
+<input type="text" id="update-image" placeholder="Image URL"><br><br>
+
+<button onclick="updatePost()">Save Changes</button>
+
+<script>
+    // Get postId from URL
+    const params = new URLSearchParams(window.location.search);
+    const postId = params.get("postId");
+
+    // Update request
+    async function updatePost() {
+        const text = document.getElementById("update-text").value;
+        const image = document.getElementById("update-image").value;
+
+        await fetch(`http://localhost:5000/updatePost/${postId}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ postText: text, postImageUrl: image })
+        });
+
+        alert("Post Updated!");
+        window.location.href = "post.html"; // go back to home
+    }
+</script>
+
+</body>
+</html>
